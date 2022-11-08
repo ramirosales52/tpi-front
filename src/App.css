@@ -1,0 +1,20 @@
+:root{
+    --azul: #53aae0;
+    --naranja: #e4b254;
+    --gris: #f9f9f9;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--gris);
+}

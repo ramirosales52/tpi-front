@@ -1,0 +1,14 @@
+.header{
+    width: 100%;
+    height: auto;
+    background-color: var(--azul);
+    border-bottom: 3px solid var(--naranja);
+  }
+  
+  .header img{
+    height: 60px;
+    width: auto;
+    margin: 5px 20px;
+    cursor: pointer;
+  }
+  

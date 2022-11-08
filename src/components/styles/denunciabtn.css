@@ -1,0 +1,49 @@
+.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 680px;
+}
+
+.btn-card-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    width: 280px;
+    height: 350px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    border-bottom: 7px solid var(--azul);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn-title{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.icon-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.icon{
+    color: var(--azul);
+}
+
+hr{
+    width: 100%;
+    opacity: .2;
+}
+
+.btn-card-div:hover{
+    box-shadow: 0px 0px 15px -8px rgba(0,0,0,0.4);
+}
+
