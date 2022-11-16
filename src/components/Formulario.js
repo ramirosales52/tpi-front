@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Swal from 'sweetalert2'
 import './styles/formulario.css'
 import '../App.css'
 
@@ -32,9 +33,20 @@ function Formulario(){
     
     const registrarDenuncia = async(e) =>{
         e.preventDefault()
-        const nuevaDenuncia = {nombre, localidad, tipoinfraccion}
+        e.target.reset()
+        const nuevaDenuncia = {nombre, apellido, localidad, email, nombredenunciado, apellidodenunciado, tipoinfraccion, motivo}
         await axios.post('http://localhost:4000/api/denuncias', nuevaDenuncia)
-            .then(response => console.log(response.data))
+            .then(response => {
+                console.log(response.data)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Denuncia guardada',
+                    showConfirmButton: true,
+                    confirmButtonText: 'Aceptar'
+                  })
+            })
+                
             .catch(err => console.log(err))   
     }
 
@@ -46,7 +58,7 @@ function Formulario(){
                 <h4><b>Denunciante</b></h4>
                 <div className="group mb-2">
                     <div className="group-container">
-                        <label className="form-label" >Nombre</label>
+                        <label className="form-label">Nombre</label>
                         <input type='Text' className="form-input" required onChange={ e => setNombre(e.target.value) }></input>
                     </div>
                     <div className="group-container"> 
@@ -74,15 +86,15 @@ function Formulario(){
                 <div className="group mb-2">
                     <div className="group-container">
                         <label className="form-label">Nombre</label>
-                        <input type='Text' className="form-input" onChange={ e => setNombredenunciado(e.target.value) }></input>
+                        <input type='Text' required className="form-input" onChange={ e => setNombredenunciado(e.target.value) }></input>
                     </div>
                     <div className="group-container"> 
-                        <label className="form-label" required>Apellido</label>
-                        <input type='Text' className="form-input" onChange={ e => setApellidodenunciado(e.target.value) }></input>
+                        <label className="form-label" >Apellido</label>
+                        <input type='Text' className="form-input" required onChange={ e => setApellidodenunciado(e.target.value) }></input>
                     </div>
                     <div className="group-container w-100">
                         <label className="form-label">Tipo de Infracción</label>
-                        <select className="select w-100" onChange={ e => setTipoinfraccion(e.target.value) }>
+                        <select className="select w-100" required onChange={ e => setTipoinfraccion(e.target.value) }>
                             <option hidden defaultValue="0"></option>
                             <option key="1">Ambiente</option>
                             <option key="2">Forestal</option>
@@ -93,11 +105,11 @@ function Formulario(){
                 <div className="group mb-2">
                     <div className="group-container w-100">
                         <label className="form-label">Motivo</label>
-                        <textarea className="w-100" onChange={ e => setMotivo(e.target.value) }></textarea>
+                        <textarea className="w-100" required onChange={ e => setMotivo(e.target.value) }></textarea>
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary">Registrar</button>     
+                <button type="Submit" className="btn btn-primary">Registrar</button>     
 
             </form>          
         </div>

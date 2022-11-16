@@ -18,3 +18,11 @@ html {
     align-items: center;
     background-color: var(--gris);
 }
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: black;
+}
