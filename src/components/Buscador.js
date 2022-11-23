@@ -3,6 +3,8 @@ import './styles/buscador.css'
 import { useState } from 'react'
 import axios from 'axios'
 import Swal from "sweetalert2";
+import Footer from "./Footer";
+import Header from "./Header";
 
 function Buscador(){
 
@@ -26,18 +28,21 @@ function Buscador(){
                 }
             })
             .catch(err => console.log(err))
-        // navigate('/denuncias')
     }
 
     return(
-        <div className='buscador-container'>
-            <form onSubmit={verificarDenuncia}>
-                <div className='group-container'>
-                    <label className='form-label'>Ingrese su email</label>
-                    <input type='Email' className='form-input w-100 mb-3' required placeholder='ejemplo@gmail.com' onChange={(e) => setEmail(e.target.value)}></input>        
-                    <button type="Submit" className="btn btn-primary">Buscar</button>
-                </div>
-            </form>
+        <div className="body">
+            <Header />
+            <div className='buscador-container'>
+                <form onSubmit={verificarDenuncia}>
+                    <div className='group-container'>
+                        <label className='form-label'>Ingrese su email</label>
+                        <input type='Email' className='form_input w-100 mb-3' required placeholder='ejemplo@gmail.com' onChange={(e) => setEmail(e.target.value)}></input>        
+                        <button type="Submit" className="btn btn-primary">Buscar</button>
+                    </div>
+                </form>
+            </div>
+            <Footer />
         </div>
     )
 }

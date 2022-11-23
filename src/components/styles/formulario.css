@@ -1,22 +1,87 @@
-.form-container {
-    background-color: var(--azul);
-    padding: 20px;
+.form-container{
+    background-color: white;
     border-radius: 10px;
+    height: auto;
+    width: auto;
+    box-shadow: 0px 0px 15px -8px rgba(0,0,0,0.4);
 }
 
-.group{
+.stepper{
+    padding-top: 25px;
     display: flex;
-    align-items: flex-start;
-    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.group-container{
+.button{
+    font-weight: 500;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 7px;
+    color: white;
+    font-size: .9rem;
+    transition: all .2s;
+}
+
+.primary{
+    background-color: var(--azul);
+}
+
+.secundary{
+    background-color: var(--azul);
+}
+
+.secundary:disabled{
+    background-color: #b8dcf2;
+}
+
+.primary:disabled{
+    background-color: #b8dcf2;
+}
+
+.button:hover:not([disabled]){
+    background-color: #369cdb;
+}
+
+.formcontainer{
+    margin: 30px 50px;
+    width: 600px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    color: #1B1C1E;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+
+.denunciado{
+    width: 100%;
+}
+
+.denuncia{
+    width: 100%;
+}
+
+.denunciante{
+    width: 100%;
+    margin: auto;
+}
+
+
+.grupocontainer{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
 }
 
-.form-input{
+.form_input{
     background-color: white;
     border: 2px solid #cfcfcf;
     border-radius: 6px;
@@ -24,6 +89,7 @@
     padding: 5px 6px;
     transition: all 0.3s;
     outline: none;
+    width: 100%;
 }
 
 .form-input:focus{
@@ -31,8 +97,9 @@
 }
 
 .form-label{
-    font-size: 17px;
+    font-size: 1rem;
     font-weight: 500;
+    margin-bottom: 3px!important;
 }
 
 .select{
@@ -45,11 +112,25 @@
     outline: none;
 }
 
+.selectcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .select:focus{
     border: 2px solid var(--naranja)!important;
 }
 
-textarea{
+.buttons{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.form-textarea{
     resize: none;
     background-color: white;
     border: 2px solid #cfcfcf;
@@ -58,9 +139,45 @@ textarea{
     padding: 5px 6px;
     transition: all 0.3s;
     outline: none;
-    height: 100px;
+    height: 80px;
 }
 
-textarea:focus{
-    border: 2px solid var(--naranja)!important;
+.dropzone{
+    width: 100%;
+    height: 100px;
+    background-color: #fafafa;
+    outline: none;
+    border: 2px dashed #eeeeee;
+    border-radius: 6px;
+    transition: all 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox_container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox{
+    width: 30px;
+    height: auto;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }

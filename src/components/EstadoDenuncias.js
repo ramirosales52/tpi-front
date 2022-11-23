@@ -2,6 +2,8 @@ import '../App.css'
 import './styles/estado-denuncias.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import Header from './Header'
+import Footer from './Footer'
 
 function EstadoDenuncias(){
     let id = 0
@@ -20,35 +22,39 @@ function EstadoDenuncias(){
     console.log(denuncias)
 
     return(
-        <div className='denuncias-container'>
-            <table className='table'>
-                <thead>
-                    <tr>
-                        <th scope="col">N°</th>
-                        <th scope="col">Tipo de Denuncia</th>
-                        <th scope="col">Localidad</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody className="table-group-divider">
-                    {denuncias.map(denuncia => (
-                    <tr>
-                        <th scope='row'>{id+=1}</th>
-                        <td>{denuncia.tipoinfraccion}</td>
-                        <td>{denuncia.localidad}</td>
-                        <td>{date}</td>
-                        <td>
-                            <div className="botones">
-                                <button className="btn btn-primary btn-sm">Consultar</button>
-                                <button className="btn btn-secondary btn-sm">Modificar</button>
-                                <button className="btn btn-outline-danger btn-sm">Eliminar</button>
-                            </div>
-                        </td>
-                    </tr>
-                    ))}
-                </tbody>
-            </table>
+        <div className="body">
+            <Header />
+            <div className='denuncias-container'>
+                <table className='table'>
+                    <thead>
+                        <tr>
+                            <th scope="col">N°</th>
+                            <th scope="col">Tipo de Denuncia</th>
+                            <th scope="col">Localidad</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody className="table-group-divider">
+                        {denuncias.map(denuncia => (
+                        <tr>
+                            <th scope='row'>{id+=1}</th>
+                            <td>{denuncia.tipoinfraccion}</td>
+                            <td>{denuncia.localidad}</td>
+                            <td>{date}</td>
+                            <td>
+                                <div className="botones">
+                                    <button className="btn btn-primary btn-sm">Consultar</button>
+                                    <button className="btn btn-secondary btn-sm">Modificar</button>
+                                    <button className="btn btn-outline-danger btn-sm">Eliminar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            <Footer />
         </div>
     )
 }

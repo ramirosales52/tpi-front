@@ -1,0 +1,26 @@
+.iniciosesion_container{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px -8px rgba(0,0,0,0.4);
+    padding: 20px;
+    gap: 30px;
+    width: 300px;
+}
+
+.iconcont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circlediv{
+    padding: 30px;
+    background-color: #d5eaf7;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

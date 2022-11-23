@@ -1,0 +1,36 @@
+.dashboardBody{
+    height: 100vh;
+    background-color: var(--gris);
+}
+
+.menu{
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    padding: 15px;
+    border-right: 1px solid rgb(201, 201, 201);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu img{
+    width: 80%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.menuitem{
+    width: 100%;
+    border-radius: 999px;
+    padding: 10px 10px;
+    margin-bottom: 30px;
+    transition: all .1s;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menuitem:hover{
+    background-color: var(--gris);
+}
