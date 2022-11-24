@@ -14,7 +14,7 @@ function Admin(){
     const iniciarSesion = (e) => {
         e.preventDefault()
         if (user === 'admin' && pass === 'admin'){
-            navigate('/admin/dashboard')
+            navigate('/admin/dashboard/inicio')
         }else{
             Swal.fire({
                 position: 'center',

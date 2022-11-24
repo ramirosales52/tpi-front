@@ -92,7 +92,7 @@
     width: 100%;
 }
 
-.form-input:focus{
+.form_input:focus{
     border: 2px solid var(--naranja)!important;
 }
 
