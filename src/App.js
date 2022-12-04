@@ -6,7 +6,6 @@ import EstadoDenuncias from './components/EstadoDenuncias';
 import Buscador from './components/Buscador';
 import DenunciasPorEmail from './components/DenunciasPorEmail';
 import Admin from './components/Admin';
-import Dashboard from './components/Dashboard';
 import Inicio from './components/pages/Inicio'
 import Administrar from './components/pages/Administrar'
 import Informes from './components/pages/Informes'

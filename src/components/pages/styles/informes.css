@@ -1,0 +1,22 @@
+.chartContainer{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 0 10px 0 ;
+    flex-direction: column;
+}
+
+.barChart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pieChart{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

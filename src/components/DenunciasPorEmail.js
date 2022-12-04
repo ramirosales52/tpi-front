@@ -7,11 +7,10 @@ import Header from './Header'
 import Footer from './Footer'
 
 
-function DenunciasPorEmail(email){
-    
+function DenunciasPorEmail(){
     const [denuncia, setDenuncia] = useState([])
     const [open, setOpen] = useState(false)
-
+    
     const location = useLocation()
 
     let id = 0
@@ -24,8 +23,7 @@ function DenunciasPorEmail(email){
             })
             .catch(err => console.log(err))
         }
-        
-       
+     
     return(
         <div className='body'>
             <Header />
@@ -37,17 +35,19 @@ function DenunciasPorEmail(email){
                             <th scope="col">Tipo de Denuncia</th>
                             <th scope="col">Localidad</th>
                             <th scope="col">Fecha</th>
+                            <th scope="col">Hora</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody className="table-group-divider">
-                        {location.state.map(data => (
+                        {location.state.map(data => ( 
                         <tr key={id+=1}>
                             <th scope='row'>{id+=1}</th>
-                            <td>{data.nombre}</td>
+                            <td>{data.titulodenuncia}</td>
                             <td>{data.localidad}</td>
-                            <td>{data.apellido}</td>
-                            <td>
+                            <td>{data.fecha.split('T')[0].split('-')[2] + "/" + data.fecha.split('T')[0].split('-')[1] + '/' + data.fecha.split('T')[0].split('-')[0]}</td>
+                            <td>{data.fecha.split('T')[1].split('.')[0]}</td>
+                            <td> 
                                 <div className="botones">
                                     <button className="btn btn-primary btn-sm" type='button' onClick={() => getDenuncia(data.email, data._id)}>Consultar</button>
                                     <button className="btn btn-secondary btn-sm">Modificar</button>
@@ -62,11 +62,17 @@ function DenunciasPorEmail(email){
                 <Modal open={open} Close={() => setOpen(false)} 
                     nombre={denuncia.nombre} 
                     apellido={denuncia.apellido}
+                    dni={denuncia.dni}
+                    codarea={denuncia.codarea}
+                    telefono={denuncia.telefono}
                     localidad={denuncia.localidad}
+                    email={denuncia.email}
                     nombredenunciado={denuncia.nombredenunciado}
                     apellidodenunciado={denuncia.apellidodenunciado}
+                    titulodenuncia={denuncia.titulodenuncia}
                     tipoinfraccion={denuncia.tipoinfraccion}
-                    motivo={denuncia.motivo}
+                    descripcion={denuncia.descripcion}
+                    fecha={denuncia.fecha}
                 />     
             </div>
             <Footer />

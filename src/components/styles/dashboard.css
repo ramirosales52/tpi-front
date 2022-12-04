@@ -18,7 +18,7 @@
 .menuitem{
     width: 100%;
     border-radius: 999px;
-    padding: 10px 10px;
+    padding: 10px 20px;
     margin-bottom: 30px;
     transition: all .1s;
     display: flex;
@@ -32,4 +32,16 @@
 
 .menuitem:active{
     background-color: rgb(238, 238, 238);
-}   
+}  
+
+.active{
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    border-radius: 999px;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    transition: all .1s;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}

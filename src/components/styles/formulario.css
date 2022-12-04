@@ -70,9 +70,11 @@
 
 .denunciante{
     width: 100%;
-    margin: auto;
 }
 
+form{
+    width: 100%;
+}
 
 .grupocontainer{
     display: flex;

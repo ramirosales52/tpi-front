@@ -12,3 +12,38 @@
     justify-content: center;
     align-items: center;
 }
+
+.boxes{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 20px;
+}
+
+.box{
+    height: 80px;
+    width: 200px;
+    background-color: rgb(175, 226, 255);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: all .2s;
+    user-select: none;
+}
+
+.adminContainer{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.box:hover{
+    background-color: rgb(127, 208, 255);
+}

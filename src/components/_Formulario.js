@@ -24,17 +24,21 @@ function Formulario(){
     
     const [nombre, setNombre] = useState('')
     const [apellido, setApellido] = useState('')
+    const [tipodni, setTipodni] = useState('')
+    const [dni, setDni] = useState('')
+    const [telefono, setTelefono] = useState('')
     const [localidad, setLocalidad] = useState('')
     const [email, setEmail] = useState('')
     const [nombredenunciado, setNombredenunciado] = useState('')
     const [apellidodenunciado, setApellidodenunciado] = useState('')
+    const [titulodenuncia, setTitulodenuncia] = useState('')
     const [tipoinfraccion, setTipoinfraccion] = useState('')
-    const [motivo, setMotivo] = useState('')
+    const [descripcion, setDescripcion] = useState('')
     
     const registrarDenuncia = async(e) =>{
         e.preventDefault()
         e.target.reset()
-        const nuevaDenuncia = {nombre, apellido, localidad, email, nombredenunciado, apellidodenunciado, tipoinfraccion, motivo}
+        const nuevaDenuncia = {nombre, apellido, tipodni, dni, telefono, localidad, email, nombredenunciado, apellidodenunciado, tipoinfraccion, titulodenuncia, descripcion}
         await axios.post('http://localhost:4000/api/denuncias', nuevaDenuncia)
             .then(response => {
                 console.log(response.data)
