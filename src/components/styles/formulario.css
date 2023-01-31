@@ -59,7 +59,7 @@
     font-size: 1.1rem;
 }
 
-
+ 
 .denunciado{
     width: 100%;
 }
@@ -121,6 +121,10 @@ form{
 }
 
 .select:focus{
+    border: 2px solid var(--naranja)!important;
+}
+
+textarea:focus{
     border: 2px solid var(--naranja)!important;
 }
 
